@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {NotFound404Component} from './not-found404/not-found404.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MatSliderModule} from '@angular/material/slider';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
