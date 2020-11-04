@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {DemoMaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     MainPageComponent,
-    NotFound404Component
+    NotFound404Component,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
