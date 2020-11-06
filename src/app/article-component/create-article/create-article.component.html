@@ -1,0 +1,59 @@
+<p>create-article works!</p>
+
+<div class="form">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="row">
+      <div class="form-group col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Title</mat-label>
+          <input matInput
+                 id="articleTitle"
+                 required
+                 [(ngModel)]="article.title"
+                 name="articleTitle">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Image</mat-label>
+          <input matInput
+                 id="articleImageUrl"
+                 [(ngModel)]="article.imageUrl"
+                 name="articleImageUrl">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Content</mat-label>
+          <input matInput
+                 id="articleContent"
+                 required
+                 [(ngModel)]="article.content"
+                 name="articleContent">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-12">
+        <div class="row">
+          <div class="col-6 example-full-width">
+            <button mat-button
+                    type="button"
+                    (click)="onSubmit()"
+                    class="example-full-width send"
+                    [disabled]="!myForm.form.valid">
+              <i class="material-icons-outlined">send</i>
+            </button>
+          </div>
+          <div class="col-6">
+            <button
+              mat-button
+              type="button"
+              (click)="back()"
+              class="example-full-width">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+.back-to-home {
+  margin-bottom: 10px;
+}
+
+.article-img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.article-img img {
+  width: 100%;
+}
+
+.article-title {
+  width: 100%;
+  word-wrap: break-word;
+  margin-top: 20px;
+  background-color: #019F62;
+  border-radius: 8px;
+}
+
+.article-title h1 {
+  padding: 20px;
+}
+
+.article-content {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  word-wrap: break-word;
+}

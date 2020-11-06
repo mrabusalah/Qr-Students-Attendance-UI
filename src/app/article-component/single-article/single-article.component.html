@@ -1,0 +1,21 @@
+<div class="text-center" *ngIf="!exist">
+  <div class="alert alert-danger" role="alert">
+    something weird happens !
+  </div>
+  <button mat-button routerLink="/home"><i class="material-icons-outlined">home</i> Home</button>
+</div>
+<div *ngIf="exist">
+  <div class="back-to-home">
+    <button mat-button routerLink="/articles"><i class="material-icons-outlined">arrow_back_ios</i> Back</button>
+  </div>
+  <div class="article-img">
+    <img src="{{article.imageUrl}}" alt="article image">
+  </div>
+  <div class="article-title text-center">
+    <h1>{{article.title}}</h1>
+  </div>
+
+  <p class="article-content">{{article.content}}</p>
+  <p>Article No. : {{article.id}}</p>
+  <p>Publish date : {{article.creationDate.slice(0, 10)}} | {{article.creationDate.slice(11, 19)}}</p>
+</div>

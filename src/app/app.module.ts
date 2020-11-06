@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainPageComponent} from './main-page/main-page.component';
 import {NotFound404Component} from './not-found404/not-found404.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
@@ -12,6 +11,12 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {DemoMaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
+import { ArticlesComponent } from './article-component/articles/articles.component';
+import { SingleArticleComponent } from './article-component/single-article/single-article.component';
+import { CreateArticleComponent } from './article-component/create-article/create-article.component';
+import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
+import { DeleteArticleComponent } from './article-component/delete-article/delete-article.component';
 
 
 @NgModule({
@@ -19,9 +24,13 @@ import { AboutUsComponent } from './about-us/about-us.component';
   ,
   declarations: [
     AppComponent,
-    MainPageComponent,
     NotFound404Component,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent,
+    ArticlesComponent,
+    SingleArticleComponent,
+    CreateArticleComponent,
+    DeleteArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +40,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SweetAlert2Module
   ],
   providers: [
     HttpClient,
