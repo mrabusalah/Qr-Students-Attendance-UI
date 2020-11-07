@@ -1,26 +1,27 @@
 <div class="home-top-header">
   <h1 class="container text-center">
-    Home Page
+    Login Page
   </h1>
 </div>
 
 <div class="row text-center">
   <div class="student col-12 col-md-4">
     <mat-card class="student-card">
-      <img mat-card-image src="assets/images/student.svg" alt="student image">
+      <img mat-card-image src="/assets/images/student.svg" alt="student image">
       <mat-card-content>
         <p>
           Click here to submit your class attendance.
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button><i class="material-icons-outlined">lock_open</i> Login as Student</button>
+        <button mat-button routerLink="/student/login"><i class="material-icons-outlined">lock_open</i> Login as Student
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
   <div class="teacher col-12 col-md-4">
     <mat-card class="teacher-card">
-      <img mat-card-image src="assets/images/teacher.svg" alt="teacher image">
+      <img mat-card-image src="/assets/images/teacher.svg" alt="teacher image">
       <mat-card-content>
         <p>
           Click here to manage your classes.
@@ -33,7 +34,7 @@
   </div>
   <div class="admin col-12 col-md-4">
     <mat-card class="admin-card">
-      <img mat-card-image src="assets/images/admin.svg" alt="admin image">
+      <img mat-card-image src="/assets/images/admin.svg" alt="admin image">
       <mat-card-content>
         <p>
           Click here to administrate the whole system.
