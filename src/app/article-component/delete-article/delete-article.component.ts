@@ -23,7 +23,7 @@ export class DeleteArticleComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.articles);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.articleService.listArticles().subscribe(res => {
       this.dataSource = new MatTableDataSource<Article>(res);
       this.dataSource.paginator = this.paginator;
@@ -33,7 +33,7 @@ export class DeleteArticleComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event): void {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -42,7 +42,7 @@ export class DeleteArticleComponent implements OnInit {
     }
   }
 
-  deleteArticle(id: number): void {
+  deleteArticle(id: number) {
     this.articleService.deleteArticleById(id).subscribe(data => {
       Swal.fire({
         icon: 'success',

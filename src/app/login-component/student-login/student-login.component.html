@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <h1 class="login-title">Welcome Back</h1>
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input type="text" name="username" formControlName="username" placeholder="Username">
+    <input type="password" name="password" formControlName="password" placeholder="Password">
+    <button type="submit" [disabled]="!loginForm.valid" id="login-button">Login</button>
+  </form>
+</div>

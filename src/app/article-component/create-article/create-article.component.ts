@@ -17,11 +17,11 @@ export class CreateArticleComponent implements OnInit {
               private router: Router) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.article = new Article();
   }
 
-  save(): void {
+  save() {
     this.articleService.insertArticle(this.article)
       .subscribe(data => {
         Swal.fire({
@@ -41,12 +41,12 @@ export class CreateArticleComponent implements OnInit {
     this.article = new Article();
   }
 
-  onSubmit(): void {
+  onSubmit() {
     this.submitted = true;
     this.save();
   }
 
-  back(): void {
+  back() {
     this.router.navigate(['/articles']);
   }
 }

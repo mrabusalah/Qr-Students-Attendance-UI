@@ -12,7 +12,7 @@ export class NotFound404Component implements OnInit {
   constructor(private router: Router) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   gotoHome() {

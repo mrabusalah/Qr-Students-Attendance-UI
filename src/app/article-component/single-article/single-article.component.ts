@@ -19,7 +19,7 @@ export class SingleArticleComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.exist = true;
     this.route.paramMap.subscribe((param: ParamMap) => {
       this.id = +param.get('id');

@@ -16,11 +16,11 @@ export class ArticlesComponent implements OnInit {
               private articleService: ArticleService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.reload();
   }
 
-  private reload(): void {
+  private reload() {
     this.articleService.listArticles().subscribe(res => {
       this.articles = res;
     }, error => console.log(error));
