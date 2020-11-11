@@ -10,6 +10,7 @@ import {DeleteArticleComponent} from './article-component/delete-article/delete-
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
 import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
+import {AdminAuthGuard} from './guards/admin-auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -20,8 +21,8 @@ const routes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: SingleArticleComponent},
-  {path: 'create/article', component: CreateArticleComponent},
-  {path: 'list/article', component: DeleteArticleComponent},
+  {path: 'create/article', component: CreateArticleComponent, canActivate: [AdminAuthGuard]},
+  {path: 'list/article', component: DeleteArticleComponent, canActivate: [AdminAuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: '/404'},
   {path: '404', component: NotFound404Component}
 
