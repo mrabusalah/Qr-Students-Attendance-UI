@@ -20,6 +20,7 @@ import {DeleteArticleComponent} from './article-component/delete-article/delete-
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { TeacherLoginComponent } from './login-component/teacher-login/teacher-login.component';
+import { AdminLoginComponent } from './login-component/admin-login/admin-login.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { TeacherLoginComponent } from './login-component/teacher-login/teacher-l
     CreateArticleComponent,
     DeleteArticleComponent,
     StudentLoginComponent,
-    TeacherLoginComponent
+    TeacherLoginComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

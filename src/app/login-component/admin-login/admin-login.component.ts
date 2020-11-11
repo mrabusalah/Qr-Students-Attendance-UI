@@ -2,14 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import Swal from 'sweetalert2';
-import {TeacherService} from '../../services/teacher.service';
+import {AdminService} from '../../services/admin.service';
 
 @Component({
-  selector: 'app-teacher-login',
-  templateUrl: './teacher-login.component.html',
-  styleUrls: ['./teacher-login.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class TeacherLoginComponent implements OnInit {
+export class AdminLoginComponent implements OnInit {
 
   loginForm: FormGroup;
   username: string;
@@ -17,7 +17,7 @@ export class TeacherLoginComponent implements OnInit {
   exist: boolean;
 
   constructor(private route: ActivatedRoute,
-              private teacherService: TeacherService,
+              private adminService: AdminService,
               private router: Router,
               private fb: FormBuilder) {
   }
@@ -32,24 +32,22 @@ export class TeacherLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.teacherService.login(
+    this.adminService.login(
       this.loginForm.value.username,
       this.loginForm.value.password
     ).subscribe(
       res => {
-        localStorage.setItem('id', res.id);
-        localStorage.setItem('username', res.username);
-        localStorage.setItem('user_type', 'teacher');
+        localStorage.setItem('user_type', 'admin');
 
         Swal.fire({
           position: 'center',
           icon: 'success',
           title: 'You are in now ',
-          footer: 'Welcome Back Dr. ' + localStorage.getItem('username'),
+          footer: 'Welcome Back Admin',
           showConfirmButton: false,
           timer: 2000
         });
-        this.router.navigate([`/teacher/home`]);
+        this.router.navigate([`/admin/home`]);
       },
       error => {
         this.exist = false;

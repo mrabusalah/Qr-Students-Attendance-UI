@@ -9,12 +9,14 @@ import {CreateArticleComponent} from './article-component/create-article/create-
 import {DeleteArticleComponent} from './article-component/delete-article/delete-article.component';
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
+import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'student/login', component: StudentLoginComponent},
   {path: 'teacher/login', component: TeacherLoginComponent},
+  {path: 'admin/login', component: AdminLoginComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: SingleArticleComponent},
