@@ -11,6 +11,7 @@ import {StudentLoginComponent} from './login-component/student-login/student-log
 import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
 import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
 import {AdminAuthGuard} from './guards/admin-auth.guard';
+import {AdminHomeComponent} from './home/admin-home/admin-home.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'teacher/login', component: TeacherLoginComponent},
   {path: 'admin/login', component: AdminLoginComponent},
   {path: 'about-us', component: AboutUsComponent},
+  {path: 'home/admin', component: AdminHomeComponent, canActivate: [AdminAuthGuard]},
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: SingleArticleComponent},
   {path: 'create/article', component: CreateArticleComponent, canActivate: [AdminAuthGuard]},

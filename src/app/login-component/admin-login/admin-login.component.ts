@@ -38,6 +38,7 @@ export class AdminLoginComponent implements OnInit {
     ).subscribe(
       res => {
         localStorage.setItem('user_type', 'admin');
+        localStorage.setItem('username', 'admin');
 
         Swal.fire({
           position: 'center',
@@ -47,7 +48,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 2000
         });
-        this.router.navigate([`/admin/home`]);
+        this.router.navigate([`home`, 'admin']);
       },
       error => {
         this.exist = false;

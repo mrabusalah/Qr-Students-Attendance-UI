@@ -43,20 +43,32 @@ export class DeleteArticleComponent implements OnInit {
   }
 
   deleteArticle(id: number) {
-    this.articleService.deleteArticleById(id).subscribe(data => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Done...',
-        text: 'Article deleted successfully!',
-      });
-      this.ngOnInit();
-    }, error => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Opps...',
-        text: 'There is an issue with deleting article!',
-      });
-      console.log(error);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You won\'t be able to revert this!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.articleService.deleteArticleById(id).subscribe(data => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Done...',
+            text: 'Article deleted successfully!',
+          });
+          this.ngOnInit();
+        }, error => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Opps...',
+            text: 'There is an issue with deleting article!',
+          });
+          console.log(error);
+        });
+      }
     });
   }
 }

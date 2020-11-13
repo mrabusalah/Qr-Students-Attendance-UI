@@ -2,7 +2,7 @@
   <div class="alert alert-danger" role="alert">
     something weird happens !
   </div>
-  <button mat-button routerLink="/home"><i class="material-icons-outlined">home</i> Home</button>
+  <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>
 </div>
 <div *ngIf="exist">
   <div class="back-to-home">

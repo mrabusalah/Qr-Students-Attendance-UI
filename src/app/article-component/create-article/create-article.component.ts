@@ -17,7 +17,7 @@ export class CreateArticleComponent implements OnInit {
               private router: Router) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.article = new Article();
   }
 
@@ -38,7 +38,6 @@ export class CreateArticleComponent implements OnInit {
         });
         console.log(error);
       });
-    this.article = new Article();
   }
 
   onSubmit() {
