@@ -12,13 +12,14 @@ import {TeacherLoginComponent} from './login-component/teacher-login/teacher-log
 import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
 import {AdminAuthGuard} from './guards/admin-auth.guard';
 import {AdminHomeComponent} from './home/admin-home/admin-home.component';
+import {LoggedInAuthGuard} from './guards/logged-in-auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent},
-  {path: 'student/login', component: StudentLoginComponent},
-  {path: 'teacher/login', component: TeacherLoginComponent},
-  {path: 'admin/login', component: AdminLoginComponent},
+  {path: 'login', component: LoginComponent, canActivate: [LoggedInAuthGuard]},
+  {path: 'student/login', component: StudentLoginComponent, canActivate: [LoggedInAuthGuard]},
+  {path: 'teacher/login', component: TeacherLoginComponent, canActivate: [LoggedInAuthGuard]},
+  {path: 'admin/login', component: AdminLoginComponent, canActivate: [LoggedInAuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'home/admin', component: AdminHomeComponent, canActivate: [AdminAuthGuard]},
   {path: 'articles', component: ArticlesComponent},
