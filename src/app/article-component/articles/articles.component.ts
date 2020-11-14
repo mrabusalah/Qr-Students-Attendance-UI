@@ -16,7 +16,7 @@ export class ArticlesComponent implements OnInit {
               private articleService: ArticleService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.reload();
   }
 
@@ -24,5 +24,13 @@ export class ArticlesComponent implements OnInit {
     this.articleService.listArticles().subscribe(res => {
       this.articles = res;
     }, error => console.log(error));
+  }
+
+  goToHome() {
+    if (!localStorage.getItem('username')) {
+      this.router.navigate(['login']);
+    } else {
+      this.router.navigate(['home', localStorage.getItem('user_type')]);
+    }
   }
 }

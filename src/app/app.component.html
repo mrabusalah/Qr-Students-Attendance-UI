@@ -6,6 +6,11 @@
     <h1 class="example-app-name">
       جامعة البلقاء التطبيقية <img src="assets/images/main-logo.png" alt="Herman Logo" width="50px"/>
     </h1>
+    <div class="user-menu" *ngIf="isLoggedIn()">
+      <button class="btn text-light" type="button" (click)="logout()">
+        <i class="material-icons-outlined">login</i> Logout
+      </button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"

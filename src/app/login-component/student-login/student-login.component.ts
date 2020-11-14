@@ -3,7 +3,6 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {StudentService} from '../../services/student.service';
 import Swal from 'sweetalert2';
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-student-login',
@@ -15,18 +14,17 @@ export class StudentLoginComponent implements OnInit {
   loginForm: FormGroup;
   username: string;
   password: string;
-  wrongCredential: boolean;
+  exist: boolean;
 
   constructor(private route: ActivatedRoute,
               private studentService: StudentService,
               private router: Router,
-              private fb: FormBuilder,
-              private snackBar: MatSnackBar) {
+              private fb: FormBuilder) {
   }
 
   ngOnInit() {
+    this.exist = true;
     localStorage.clear();
-    this.wrongCredential = true;
     this.loginForm = this.fb.group({
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
@@ -43,11 +41,12 @@ export class StudentLoginComponent implements OnInit {
         localStorage.setItem('refresh_token', res.refresh_token);
         localStorage.setItem('id', res.userId);
         localStorage.setItem('username', res.username);
+        localStorage.setItem('user_type', 'student');
 
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Your are login now ',
+          title: 'You are in now ',
           footer: 'Welcome Back ' + localStorage.getItem('username'),
           showConfirmButton: false,
           timer: 2000
@@ -55,7 +54,7 @@ export class StudentLoginComponent implements OnInit {
         this.router.navigate([`/student/home`]);
       },
       error => {
-        this.wrongCredential = false;
+        this.exist = false;
         console.error(error);
       }
     );

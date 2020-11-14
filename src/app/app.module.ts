@@ -19,6 +19,9 @@ import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 import {DeleteArticleComponent} from './article-component/delete-article/delete-article.component';
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TokenInterceptorService} from './services/token-interceptor.service';
+import { TeacherLoginComponent } from './login-component/teacher-login/teacher-login.component';
+import { AdminLoginComponent } from './login-component/admin-login/admin-login.component';
+import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import {TokenInterceptorService} from './services/token-interceptor.service';
     SingleArticleComponent,
     CreateArticleComponent,
     DeleteArticleComponent,
-    StudentLoginComponent
+    StudentLoginComponent,
+    TeacherLoginComponent,
+    AdminLoginComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

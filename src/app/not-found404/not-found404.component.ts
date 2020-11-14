@@ -15,8 +15,12 @@ export class NotFound404Component implements OnInit {
   ngOnInit() {
   }
 
-  gotoHome() {
-    this.router.navigate(['/home']);
+  goToHome() {
+    if (!localStorage.getItem('username')) {
+      this.router.navigate(['login']);
+    } else {
+      this.router.navigate(['home', localStorage.getItem('user_type')]);
+    }
   }
 
 }

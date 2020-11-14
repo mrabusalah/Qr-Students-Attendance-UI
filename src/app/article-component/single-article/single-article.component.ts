@@ -32,4 +32,12 @@ export class SingleArticleComponent implements OnInit {
         });
     });
   }
+
+  goToHome() {
+    if (!localStorage.getItem('username')) {
+      this.router.navigate(['login']);
+    } else {
+      this.router.navigate(['home', localStorage.getItem('user_type')]);
+    }
+  }
 }
