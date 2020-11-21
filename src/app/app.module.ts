@@ -14,14 +14,18 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {LoginComponent} from './login-component/login/login.component';
 import {ArticlesComponent} from './article-component/articles/articles.component';
 import {SingleArticleComponent} from './article-component/single-article/single-article.component';
-import {CreateArticleComponent} from './article-component/create-article/create-article.component';
+import {CreateArticleComponent} from './admin-component/create-article/create-article.component';
 import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
-import {DeleteArticleComponent} from './article-component/delete-article/delete-article.component';
+import {DeleteArticleComponent} from './admin-component/delete-article/delete-article.component';
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TokenInterceptorService} from './services/token-interceptor.service';
-import { TeacherLoginComponent } from './login-component/teacher-login/teacher-login.component';
-import { AdminLoginComponent } from './login-component/admin-login/admin-login.component';
-import { AdminHomeComponent } from './home/admin-home/admin-home.component';
+import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
+import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
+import {AdminHomeComponent} from './home/admin-home/admin-home.component';
+import {ListStudentsComponent} from './admin-component/list-students/list-students.component';
+import {CreateStudentComponent} from './admin-component/create-student/create-student.component';
+import {EditStudentComponent} from './admin-component/edit-student/edit-student.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -39,7 +43,10 @@ import { AdminHomeComponent } from './home/admin-home/admin-home.component';
     StudentLoginComponent,
     TeacherLoginComponent,
     AdminLoginComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    ListStudentsComponent,
+    CreateStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,8 @@ import { AdminHomeComponent } from './home/admin-home/admin-home.component';
     MatNativeDateModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    MatSelectModule
   ],
 
   providers: [HttpClient,

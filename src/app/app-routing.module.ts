@@ -5,14 +5,17 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {LoginComponent} from './login-component/login/login.component';
 import {ArticlesComponent} from './article-component/articles/articles.component';
 import {SingleArticleComponent} from './article-component/single-article/single-article.component';
-import {CreateArticleComponent} from './article-component/create-article/create-article.component';
-import {DeleteArticleComponent} from './article-component/delete-article/delete-article.component';
+import {CreateArticleComponent} from './admin-component/create-article/create-article.component';
+import {DeleteArticleComponent} from './admin-component/delete-article/delete-article.component';
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
 import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
 import {AdminAuthGuard} from './guards/admin-auth.guard';
 import {AdminHomeComponent} from './home/admin-home/admin-home.component';
 import {LoggedInAuthGuard} from './guards/logged-in-auth.guard';
+import {ListStudentsComponent} from './admin-component/list-students/list-students.component';
+import {CreateStudentComponent} from './admin-component/create-student/create-student.component';
+import {EditStudentComponent} from './admin-component/edit-student/edit-student.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -25,7 +28,10 @@ const routes: Routes = [
   {path: 'articles', component: ArticlesComponent},
   {path: 'article/:id', component: SingleArticleComponent},
   {path: 'create/article', component: CreateArticleComponent, canActivate: [AdminAuthGuard]},
+  {path: 'create/student', component: CreateStudentComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/article', component: DeleteArticleComponent, canActivate: [AdminAuthGuard]},
+  {path: 'list/student', component: ListStudentsComponent, canActivate: [AdminAuthGuard]},
+  {path: 'edit/student/:username', component: EditStudentComponent, canActivate: [AdminAuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: '/404'},
   {path: '404', component: NotFound404Component}
 

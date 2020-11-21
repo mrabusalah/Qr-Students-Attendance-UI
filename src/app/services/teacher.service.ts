@@ -16,7 +16,15 @@ export class TeacherService {
     return this.http.post(this.baseUrl + `/login/${username}/${password}`, null);
   }
 
+  list(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
+
   loggedIn() {
     return !!localStorage.getItem('teacher');
+  }
+
+  getCount(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/count`);
   }
 }

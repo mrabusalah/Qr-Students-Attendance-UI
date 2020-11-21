@@ -1,0 +1,104 @@
+<div class="text-center" *ngIf="!exist">
+  <div class="alert alert-danger" role="alert">
+    something weird happens ! , maybe username not exist
+  </div>
+  <img src="assets/images/main-logo.png" width="300px" alt="404 image">
+  <h3 class="text-danger"></h3>
+  <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>
+</div>
+<div *ngIf="exist">
+  <div class="form">
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <div class="row">
+        <div class="form-group col-12">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput
+                   id="studentName"
+                   required
+                   [(ngModel)]="student.name"
+                   name="studentName">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group col-md-6 col-12">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput
+                   id="studentUsername"
+                   required
+                   [(ngModel)]="student.username"
+                   name="studentUsername">
+          </mat-form-field>
+        </div>
+
+        <div class="form-group col-md-6 col-12">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput
+                   id="studentPassword"
+                   required
+                   type="password"
+                   [(ngModel)]="student.password"
+                   name="studentPassword">
+          </mat-form-field>
+        </div>
+
+
+        <div class="form-group col-md-6 col-12">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Collage</mat-label>
+            <mat-select [formControl]="collageControl"
+                        [(ngModel)]="student.collage"
+                        required>
+              <mat-option *ngFor="let collage of collages"
+                          [value]="collage['collageName']"
+                          (click)="onCollageChange(collage.id)">
+                {{collage['collageName']}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="collageControl.hasError('required')">Please choose a collage</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group col-md-6 col-12">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Major</mat-label>
+            <mat-select [formControl]="majorControl"
+                        [(ngModel)]="student.major"
+                        required>
+              <mat-option *ngFor="let major of selectedMajors"
+                          [value]="major">
+                {{major}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="majorControl.hasError('required')">Please choose a major</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group col-12">
+          <div class="row">
+            <div class="col-6 example-full-width">
+              <button mat-button
+                      type="button"
+                      (click)="onSubmit()"
+                      class="example-full-width send"
+                      [disabled]="!myForm.form.valid">
+                <i class="material-icons-outlined">send</i>
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                mat-button
+                type="button"
+                (click)="back()"
+                class="example-full-width">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

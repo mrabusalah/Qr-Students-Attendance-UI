@@ -6,13 +6,9 @@
   background-color: #63c2de;
 }
 
-/*.students-number .students-bg {*/
-/*  background-image: url("src/assets/images/statistic-student.png");*/
-/*  background-size: 75px 75px;*/
-/*  background-repeat: no-repeat;*/
-/*  background-position: right;*/
-/*  opacity: 0.2;*/
-/*}*/
+.students-number .image, .teachers-number .image, .courses-number .image, .absent-number .image {
+  opacity: .5;
+}
 
 .teachers-number {
   background-color: #20a8d8;
@@ -24,4 +20,8 @@
 
 .absent-number {
   background-color: #f86c6b;
+}
+
+.icon:hover {
+  cursor: pointer;
 }

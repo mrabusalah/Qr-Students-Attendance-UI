@@ -2,53 +2,74 @@
   <div class="row">
     <div class="statistic-card students-number col-12 col-md-3">
       <div class="row">
-        <div class="col-8">
-          <div class="icon">
-            <i class="material-icons-outlined">account_box</i>
+        <div class="col-8 text-center">
+          <div class="icon text-left" routerLink="/list/student">
+            <i class="material-icons-outlined">list</i>
           </div>
           <div class="title">
-            Students
+            <h2>Students</h2>
           </div>
           <div class="number">
             {{studentsNumber}}
           </div>
         </div>
-        <div class="col-4">
-          <img src="src/assets/images/statistic-student.png" alt="student">
+        <div class="col-4 image">
+          <img src="assets/images/statistic-student.png" alt="student" width="75px">
         </div>
       </div>
     </div>
     <div class="statistic-card teachers-number col-12 col-md-3">
-      <div class="icon">
-        <i class="material-icons-outlined">account_box</i>
-      </div>
-      <div class="title">
-        Teachers
-      </div>
-      <div class="number">
-        {{teachersNumber}}
+      <div class="row">
+        <div class="col-8 text-center">
+          <div class="icon text-left">
+            <i class="material-icons-outlined">list</i>
+          </div>
+          <div class="title">
+            <h2>Teachers</h2>
+          </div>
+          <div class="number">
+            {{teachersNumber}}
+          </div>
+        </div>
+        <div class="col-4 image">
+          <img src="assets/images/statistic-teacher.png" alt="teachers" width="75px">
+        </div>
       </div>
     </div>
     <div class="statistic-card courses-number col-12 col-md-3">
-      <div class="icon">
-        <i class="material-icons-outlined">account_box</i>
-      </div>
-      <div class="title">
-        Courses
-      </div>
-      <div class="number">
-        {{coursesNumber}}
+      <div class="row">
+        <div class="col-8 text-center">
+          <div class="icon text-left">
+            <i class="material-icons-outlined">list</i>
+          </div>
+          <div class="title">
+            <h2>Courses</h2>
+          </div>
+          <div class="number">
+            {{coursesNumber}}
+          </div>
+        </div>
+        <div class="col-4 image">
+          <img src="assets/images/statistic-books.png" alt="courses" width="75px">
+        </div>
       </div>
     </div>
     <div class="statistic-card absent-number col-12 col-md-3">
-      <div class="icon">
-        <i class="material-icons-outlined">account_box</i>
-      </div>
-      <div class="title">
-        Absent
-      </div>
-      <div class="number">
-        {{absentNumber}}
+      <div class="row">
+        <div class="col-8 text-center">
+          <div class="icon text-left">
+            <i class="material-icons-outlined">list</i>
+          </div>
+          <div class="title">
+            <h2>Absent</h2>
+          </div>
+          <div class="number">
+            {{coursesNumber}}
+          </div>
+        </div>
+        <div class="col-4 image">
+          <img src="assets/images/statistic-absent.png" alt="absent" width="75px">
+        </div>
       </div>
     </div>
   </div>
