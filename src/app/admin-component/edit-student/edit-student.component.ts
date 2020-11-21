@@ -31,11 +31,16 @@ export class EditStudentComponent implements OnInit {
               private http: HttpClient) {
     this.student = new Student();
     this.exist = true;
+    this.http.get('../../../assets/data/collages.json')
+      .subscribe(data => {
+        this.collages = data;
+      }, error => console.log(error));
     this.route.paramMap.subscribe((param: ParamMap) => {
       this.username = param.get('username');
       this.studentService.getStudentByUsername(this.username)
         .subscribe(res => {
           this.student = res;
+          this.reload();
         }, error => {
           this.exist = false;
           console.log(error);
@@ -44,12 +49,12 @@ export class EditStudentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('../../../assets/data/collages.json')
-      .subscribe(data => {
-        this.collages = data;
-        this.idIdx = +this.getId();
-        this.onCollageChange(this.idIdx);
-      }, error => console.log(error));
+
+  }
+
+  reload() {
+    this.idIdx = +this.getId();
+    this.onCollageChange(this.idIdx);
   }
 
   onCollageChange(id: number) {
