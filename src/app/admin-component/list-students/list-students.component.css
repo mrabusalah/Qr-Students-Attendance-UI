@@ -1,0 +1,31 @@
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.add {
+  border: 1px #fff solid;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add i {
+  font-size: xx-large;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  overflow: hidden;
+  width: 50px;
+  text-overflow: ellipsis;
+}
+
+.table-header th {
+  text-align: center;
+}
