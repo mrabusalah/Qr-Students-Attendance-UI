@@ -58,7 +58,7 @@ export class ListStudentsComponent implements OnInit {
           Swal.fire({
             icon: 'success',
             title: 'Done...',
-            text: 'Article deleted successfully!',
+            text: 'Student deleted successfully!',
           });
           this.ngOnInit();
         }, error => {

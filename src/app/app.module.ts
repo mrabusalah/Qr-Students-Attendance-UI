@@ -26,6 +26,9 @@ import {ListStudentsComponent} from './admin-component/list-students/list-studen
 import {CreateStudentComponent} from './admin-component/create-student/create-student.component';
 import {EditStudentComponent} from './admin-component/edit-student/edit-student.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ListTeachersComponent } from './admin-component/list-teachers/list-teachers.component';
+import { CreateTeacherComponent } from './admin-component/create-teacher/create-teacher.component';
+import { EditTeacherComponent } from './admin-component/edit-teacher/edit-teacher.component';
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import {MatSelectModule} from '@angular/material/select';
     AdminHomeComponent,
     ListStudentsComponent,
     CreateStudentComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    ListTeachersComponent,
+    CreateTeacherComponent,
+    EditTeacherComponent
   ],
   imports: [
     BrowserModule,

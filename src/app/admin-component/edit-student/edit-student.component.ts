@@ -76,14 +76,14 @@ export class EditStudentComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Done...',
-          text: 'Student added successfully!',
+          text: 'Student updated successfully!',
         });
         this.back();
       }, error => {
         Swal.fire({
           icon: 'error',
           title: 'Opps...',
-          text: 'There is an issue with creating student!',
+          text: 'There is an issue with updating student!',
         });
         console.log(error);
       });
