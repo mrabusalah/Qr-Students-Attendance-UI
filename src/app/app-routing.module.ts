@@ -16,6 +16,9 @@ import {LoggedInAuthGuard} from './guards/logged-in-auth.guard';
 import {ListStudentsComponent} from './admin-component/list-students/list-students.component';
 import {CreateStudentComponent} from './admin-component/create-student/create-student.component';
 import {EditStudentComponent} from './admin-component/edit-student/edit-student.component';
+import {ListTeachersComponent} from './admin-component/list-teachers/list-teachers.component';
+import {CreateTeacherComponent} from './admin-component/create-teacher/create-teacher.component';
+import {EditTeacherComponent} from './admin-component/edit-teacher/edit-teacher.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -29,12 +32,14 @@ const routes: Routes = [
   {path: 'article/:id', component: SingleArticleComponent},
   {path: 'create/article', component: CreateArticleComponent, canActivate: [AdminAuthGuard]},
   {path: 'create/student', component: CreateStudentComponent, canActivate: [AdminAuthGuard]},
+  {path: 'create/teacher', component: CreateTeacherComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/article', component: DeleteArticleComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/student', component: ListStudentsComponent, canActivate: [AdminAuthGuard]},
+  {path: 'list/teacher', component: ListTeachersComponent, canActivate: [AdminAuthGuard]},
   {path: 'edit/student/:username', component: EditStudentComponent, canActivate: [AdminAuthGuard]},
+  {path: 'edit/teacher/:username', component: EditTeacherComponent, canActivate: [AdminAuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: '/404'},
   {path: '404', component: NotFound404Component}
-
 ];
 
 @NgModule({

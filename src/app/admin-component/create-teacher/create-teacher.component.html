@@ -1,0 +1,91 @@
+<div class="form">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div class="row">
+      <div class="form-group col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput
+                 id="teacherName"
+                 required
+                 [(ngModel)]="teacher.name"
+                 name="teacherName">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-6 col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input matInput
+                 id="teacherUsername"
+                 required
+                 [(ngModel)]="teacher.username"
+                 name="teacherUsername">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-6 col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput
+                 id="teacherPassword"
+                 required
+                 type="password"
+                 [(ngModel)]="teacher.password"
+                 name="teacherPassword">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-6 col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput
+                 id="teacherEmail"
+                 required
+                 pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                 [(ngModel)]="teacher.email"
+                 name="teacherEmail">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-6 col-12">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Phone</mat-label>
+          <input matInput
+                 id="teacherPhone"
+                 required
+                 type="tel"
+                 pattern="[0-9]{10}"
+                 [(ngModel)]="teacher.phone"
+                 name="teacherPhone">
+        </mat-form-field>
+      </div>
+
+
+      <div class="form-group col-12">
+        <div class="row">
+          <div class="col-6 example-full-width">
+            <button mat-button
+                    type="button"
+                    (click)="onSubmit()"
+                    class="example-full-width send"
+                    [disabled]="!myForm.form.valid">
+              <i class="material-icons-outlined">send</i>
+            </button>
+          </div>
+          <div class="col-6">
+            <button
+              mat-button
+              type="button"
+              (click)="back()"
+              class="example-full-width">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

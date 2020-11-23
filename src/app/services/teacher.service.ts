@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Teacher} from '../classes/Teacher';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,21 @@ export class TeacherService {
 
   getCount(): Observable<any> {
     return this.http.get(`${this.baseUrl}/count`);
+  }
+
+  deleteTeacherById(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+
+  insertTeacher(teacher: Teacher): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, teacher);
+  }
+
+  getTeacherByUsername(username: string) {
+    return this.http.get(`${this.baseUrl}/username/${username}`);
+  }
+
+  updateTeacher(teacher: Teacher): Observable<any> {
+    return this.http.put(`${this.baseUrl}`, teacher);
   }
 }
