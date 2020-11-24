@@ -19,6 +19,9 @@ import {EditStudentComponent} from './admin-component/edit-student/edit-student.
 import {ListTeachersComponent} from './admin-component/list-teachers/list-teachers.component';
 import {CreateTeacherComponent} from './admin-component/create-teacher/create-teacher.component';
 import {EditTeacherComponent} from './admin-component/edit-teacher/edit-teacher.component';
+import {CreateCourseComponent} from './admin-component/create-course/create-course.component';
+import {ListCoursesComponent} from './admin-component/list-courses/list-courses.component';
+import {EditCourseComponent} from './admin-component/edit-course/edit-course.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -33,11 +36,14 @@ const routes: Routes = [
   {path: 'create/article', component: CreateArticleComponent, canActivate: [AdminAuthGuard]},
   {path: 'create/student', component: CreateStudentComponent, canActivate: [AdminAuthGuard]},
   {path: 'create/teacher', component: CreateTeacherComponent, canActivate: [AdminAuthGuard]},
+  {path: 'create/course', component: CreateCourseComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/article', component: DeleteArticleComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/student', component: ListStudentsComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/teacher', component: ListTeachersComponent, canActivate: [AdminAuthGuard]},
+  {path: 'list/course', component: ListCoursesComponent, canActivate: [AdminAuthGuard]},
   {path: 'edit/student/:username', component: EditStudentComponent, canActivate: [AdminAuthGuard]},
   {path: 'edit/teacher/:username', component: EditTeacherComponent, canActivate: [AdminAuthGuard]},
+  {path: 'edit/course/:id', component: EditCourseComponent, canActivate: [AdminAuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: '/404'},
   {path: '404', component: NotFound404Component}
 ];
