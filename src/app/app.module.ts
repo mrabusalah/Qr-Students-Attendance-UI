@@ -29,6 +29,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { ListTeachersComponent } from './admin-component/list-teachers/list-teachers.component';
 import { CreateTeacherComponent } from './admin-component/create-teacher/create-teacher.component';
 import { EditTeacherComponent } from './admin-component/edit-teacher/edit-teacher.component';
+import { CreateCourseComponent } from './admin-component/create-course/create-course.component';
+import { ListCoursesComponent } from './admin-component/list-courses/list-courses.component';
+import { EditCourseComponent } from './admin-component/edit-course/edit-course.component';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { EditTeacherComponent } from './admin-component/edit-teacher/edit-teache
     EditStudentComponent,
     ListTeachersComponent,
     CreateTeacherComponent,
-    EditTeacherComponent
+    EditTeacherComponent,
+    CreateCourseComponent,
+    ListCoursesComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,
