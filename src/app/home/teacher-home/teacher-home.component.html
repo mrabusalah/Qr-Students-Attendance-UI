@@ -1,0 +1,36 @@
+<div class="text-center" *ngIf="courses == null || courses.length == 0">
+  <div class="alert alert-secondary" role="alert">
+    NO courses assigned yet !
+  </div>
+  <img src="assets/images/main-logo.png" width="300px" alt="404 image">
+  <h3 class="text-danger"></h3>
+  <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>
+</div>
+
+
+<div *ngIf="courses != null && courses.length > 0">
+
+  <div class="teacher-header text-center">
+    <h1 class="d-flex align-items-center justify-content-center h-100">
+      {{getQuotation()}}
+    </h1>
+  </div>
+  <div *ngFor="let course of courses" class="courses-section">
+    <mat-accordion>
+      <mat-expansion-panel class="text-center">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{course.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            # {{course.sectionNumber}} / {{course.days}} / {{course.hourFrom}}-{{course.hourTo}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-button (click)="listStudents(course.id)"><i class="material-icons-outlined">group</i> Students List</button>
+        <button mat-button (click)="listLectures()"><i class="material-icons-outlined">class</i> Lectures List</button>
+        <button mat-button (click)="courseInfo(course)"><i class="material-icons-outlined">info</i> Course Info</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+</div>

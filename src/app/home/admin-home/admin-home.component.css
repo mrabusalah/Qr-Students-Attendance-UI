@@ -25,3 +25,24 @@
 .icon:hover {
   cursor: pointer;
 }
+
+.example-full-width {
+  width: 100%;
+}
+
+.get-attendance-by-date {
+  height: auto;
+  padding: 20px;
+  background-image: url("src/assets/images/attendance-bg.png");
+  background-repeat: no-repeat;
+  background-size: covernst whe;
+  background-position: center;
+}
+
+.get-attendance-by-date h1 {
+  margin-top: 55px;
+}
+
+.send {
+  padding: 8px;
+}

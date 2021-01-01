@@ -48,7 +48,7 @@ export class AdminLoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 2000
         });
-        this.router.navigate([`home`, 'admin']);
+        this.router.navigate([`home`, localStorage.getItem('user_type')]);
       },
       error => {
         this.exist = false;

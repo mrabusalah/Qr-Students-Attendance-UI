@@ -1,0 +1,36 @@
+.students-bg {
+  height: 350px;
+  background-image: url("src/assets/images/students-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding: 10px;
+}
+
+.back-to-home {
+  margin-bottom: 10px;
+}
+
+.table-names {
+  margin-top: 20px;
+}
+
+#students {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#students td, #students th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#students th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #00b871;
+  color: white;
+}
+

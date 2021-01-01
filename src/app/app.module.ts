@@ -12,27 +12,30 @@ import {DemoMaterialModule} from './material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {LoginComponent} from './login-component/login/login.component';
-import {ArticlesComponent} from './article-component/articles/articles.component';
-import {SingleArticleComponent} from './article-component/single-article/single-article.component';
-import {CreateArticleComponent} from './admin-component/create-article/create-article.component';
+import {ArticlesComponent} from './component-article/articles/articles.component';
+import {SingleArticleComponent} from './component-article/single-article/single-article.component';
+import {CreateArticleComponent} from './component-admin/create-article/create-article.component';
 import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
-import {DeleteArticleComponent} from './admin-component/delete-article/delete-article.component';
+import {DeleteArticleComponent} from './component-admin/delete-article/delete-article.component';
 import {StudentLoginComponent} from './login-component/student-login/student-login.component';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import {TeacherLoginComponent} from './login-component/teacher-login/teacher-login.component';
 import {AdminLoginComponent} from './login-component/admin-login/admin-login.component';
 import {AdminHomeComponent} from './home/admin-home/admin-home.component';
-import {ListStudentsComponent} from './admin-component/list-students/list-students.component';
-import {CreateStudentComponent} from './admin-component/create-student/create-student.component';
-import {EditStudentComponent} from './admin-component/edit-student/edit-student.component';
+import {ListStudentsComponent} from './component-admin/list-students/list-students.component';
+import {CreateStudentComponent} from './component-admin/create-student/create-student.component';
+import {EditStudentComponent} from './component-admin/edit-student/edit-student.component';
 import {MatSelectModule} from '@angular/material/select';
-import { ListTeachersComponent } from './admin-component/list-teachers/list-teachers.component';
-import { CreateTeacherComponent } from './admin-component/create-teacher/create-teacher.component';
-import { EditTeacherComponent } from './admin-component/edit-teacher/edit-teacher.component';
-import { CreateCourseComponent } from './admin-component/create-course/create-course.component';
-import { ListCoursesComponent } from './admin-component/list-courses/list-courses.component';
-import { EditCourseComponent } from './admin-component/edit-course/edit-course.component';
-
+import {ListTeachersComponent} from './component-admin/list-teachers/list-teachers.component';
+import {CreateTeacherComponent} from './component-admin/create-teacher/create-teacher.component';
+import {EditTeacherComponent} from './component-admin/edit-teacher/edit-teacher.component';
+import {CreateCourseComponent} from './component-admin/create-course/create-course.component';
+import {ListCoursesComponent} from './component-admin/list-courses/list-courses.component';
+import {EditCourseComponent} from './component-admin/edit-course/edit-course.component';
+import {ScanComponent} from './component-student/scan/scan.component';
+import {ZXingScannerModule} from '@zxing/ngx-scanner';
+import {TeacherHomeComponent} from './home/teacher-home/teacher-home.component';
+import { ListCourseStudentsComponent } from './component-teacher/list-course-students/list-course-students.component';
 
 @NgModule({
   exports: [MatSliderModule]
@@ -58,7 +61,10 @@ import { EditCourseComponent } from './admin-component/edit-course/edit-course.c
     EditTeacherComponent,
     CreateCourseComponent,
     ListCoursesComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    ScanComponent,
+    TeacherHomeComponent,
+    ListCourseStudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,8 @@ import { EditCourseComponent } from './admin-component/edit-course/edit-course.c
     ReactiveFormsModule,
     BrowserAnimationsModule,
     SweetAlert2Module,
-    MatSelectModule
+    MatSelectModule,
+    ZXingScannerModule
   ],
 
   providers: [HttpClient,

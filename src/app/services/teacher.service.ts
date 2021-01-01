@@ -22,7 +22,7 @@ export class TeacherService {
   }
 
   loggedIn() {
-    return !!localStorage.getItem('teacher');
+    return (localStorage.getItem('user_type') == 'teacher');
   }
 
   getCount(): Observable<any> {
@@ -43,5 +43,9 @@ export class TeacherService {
 
   updateTeacher(teacher: Teacher): Observable<any> {
     return this.http.put(`${this.baseUrl}`, teacher);
+  }
+
+  getCourses(username: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/username/${username}/courses`);
   }
 }

@@ -52,4 +52,8 @@ export class StudentService {
   updateStudent(student: Student): Observable<any> {
     return this.http.put(`${this.baseUrl}`, student);
   }
+
+  getStudentsByCourseId(courseId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/course/${courseId}`);
+  }
 }
