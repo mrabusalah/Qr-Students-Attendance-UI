@@ -1,0 +1,12 @@
+.teacher-header {
+  height: 350px;
+  background-image: url("src/assets/images/teacher-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding: 10px;
+}
+
+.courses-section {
+  margin-top: 20px;
+}

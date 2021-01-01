@@ -70,7 +70,7 @@ export class EditTeacherComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['/list/teacher']);
+    this.router.navigate(['list/teacher']);
   }
 
 

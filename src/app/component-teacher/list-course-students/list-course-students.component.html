@@ -1,0 +1,28 @@
+<div class="text-center" *ngIf="students == null || students.size == 0">
+  <div class="alert alert-secondary" role="alert">
+    NO articles yet !
+  </div>
+  <img src="assets/images/main-logo.png" width="300px" alt="404 image">
+  <h3 class="text-danger"></h3>
+  <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>
+</div>
+<div *ngIf="students != null">
+  <div class="back-to-home">
+    <button mat-button (click)="goToHome()"><i class="material-icons-outlined">arrow_back_ios</i> Back</button>
+  </div>
+  <div class="students-bg">
+    <h1 class="d-flex align-items-center justify-content-center h-100">Students list</h1>
+  </div>
+  <div class="text-center table-names">
+    <table id="students">
+      <tr>
+        <th>username</th>
+        <th>student name</th>
+      </tr>
+      <tr *ngFor="let student of students | keyvalue">
+        <td>{{student.key}}</td>
+        <td>{{student.value}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
