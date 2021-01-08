@@ -22,7 +22,7 @@
 .flip-box {
   display: flex;
   align-content: stretch;
-  min-height: 350px;
+  min-height: 450px;
   flex-wrap: wrap;
   position: relative;
   padding: 0;
@@ -78,12 +78,12 @@
 
 .flip-box .content {
   display: flex;
+  font-size: large;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   -webkit-transform: translateZ(50px);
   transform: translateZ(50px);
-  text-shadow: 0px 0px 2px black;
 }
 
 .yousef {

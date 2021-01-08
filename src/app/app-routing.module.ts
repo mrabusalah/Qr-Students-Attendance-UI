@@ -27,6 +27,7 @@ import {StudentAuthGuard} from './guards/student-auth.guard';
 import {TeacherHomeComponent} from './home/teacher-home/teacher-home.component';
 import {TeacherAuthGuard} from './guards/teacher-auth.guard';
 import {ListCourseStudentsComponent} from './component-teacher/list-course-students/list-course-students.component';
+import {ContactUsComponent} from './contact-us/contact-us.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'teacher/login', component: TeacherLoginComponent, canActivate: [LoggedInAuthGuard]},
   {path: 'admin/login', component: AdminLoginComponent, canActivate: [LoggedInAuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
+  {path: 'contact-us', component: ContactUsComponent},
   {path: 'home/admin', component: AdminHomeComponent, canActivate: [AdminAuthGuard]},
   {path: 'home/teacher', component: TeacherHomeComponent, canActivate: [TeacherAuthGuard]},
   {path: 'home/scan', component: ScanComponent, canActivate: [StudentAuthGuard]},

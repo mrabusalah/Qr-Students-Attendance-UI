@@ -36,6 +36,7 @@ import {ScanComponent} from './component-student/scan/scan.component';
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
 import {TeacherHomeComponent} from './home/teacher-home/teacher-home.component';
 import { ListCourseStudentsComponent } from './component-teacher/list-course-students/list-course-students.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   exports: [MatSliderModule]
@@ -64,7 +65,8 @@ import { ListCourseStudentsComponent } from './component-teacher/list-course-stu
     EditCourseComponent,
     ScanComponent,
     TeacherHomeComponent,
-    ListCourseStudentsComponent
+    ListCourseStudentsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
