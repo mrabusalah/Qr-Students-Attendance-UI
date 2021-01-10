@@ -9,6 +9,7 @@ import {Student} from '../classes/Student';
 })
 export class StudentService {
   private baseUrl = 'http://localhost:8080/api/v1/student';
+  private integration = 'http://localhost:8080/api/v1/integration';
 
   constructor(private http: HttpClient,
               private router: Router) {
@@ -54,6 +55,10 @@ export class StudentService {
   }
 
   getStudentsByCourseId(courseId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/course/${courseId}`);
+    return this.http.get(`${this.integration}/course-student/students/${courseId}`);
+  }
+
+  addCourseToStudent(courseId: string, studentUsername: string) {
+    return this.http.post(`${this.integration}/course-student`, {"courseId" : courseId , "studentId" : studentUsername});
   }
 }

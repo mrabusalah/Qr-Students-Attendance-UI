@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {StudentService} from '../../services/student.service';
+import {Student} from '../../classes/Student';
 
 @Component({
   selector: 'app-list-course-students',
@@ -9,8 +10,9 @@ import {StudentService} from '../../services/student.service';
 })
 export class ListCourseStudentsComponent implements OnInit {
 
-  students: Map<string, string>;
+  students: Student[];
   courseId: number;
+  studentName: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -19,7 +21,6 @@ export class ListCourseStudentsComponent implements OnInit {
       this.courseId = +param.get('id');
       this.studentService.getStudentsByCourseId(this.courseId)
         .subscribe(res => {
-          console.log(res);
           this.students = res;
         }, error => {
           console.log(error);

@@ -49,7 +49,7 @@ export class TeacherLoginComponent implements OnInit {
       this.loginForm.value.password
     ).subscribe(
       res => {
-        localStorage.setItem('id', res.id);
+        localStorage.setItem('teacher_id', res.id);
         localStorage.setItem('username', res.username);
         localStorage.setItem('user_type', 'teacher');
         localStorage.setItem('quotation', this.quotations[Math.floor((Math.random() * this.quotations.length))]);

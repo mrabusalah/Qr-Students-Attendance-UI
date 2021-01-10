@@ -26,7 +26,11 @@
             # {{course.sectionNumber}} / {{course.days}} / {{course.hourFrom}}-{{course.hourTo}}
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <button mat-button (click)="listStudents(course.id)"><i class="material-icons-outlined">group</i> Students List</button>
+        <button mat-button (click)="generateQrCode(course)"><i class="material-icons-outlined">qr_code_scanner</i>
+          Generate Code
+        </button>
+        <button mat-button (click)="listStudents(course.id)"><i class="material-icons-outlined">group</i> Students List
+        </button>
         <button mat-button (click)="listLectures()"><i class="material-icons-outlined">class</i> Lectures List</button>
         <button mat-button (click)="courseInfo(course)"><i class="material-icons-outlined">info</i> Course Info</button>
       </mat-expansion-panel>

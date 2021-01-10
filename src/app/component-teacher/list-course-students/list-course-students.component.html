@@ -1,4 +1,4 @@
-<div class="text-center" *ngIf="students == null || students.size == 0">
+<div class="text-center" *ngIf="students == null || students.length == 0">
   <div class="alert alert-secondary" role="alert">
     NO articles yet !
   </div>
@@ -6,7 +6,7 @@
   <h3 class="text-danger"></h3>
   <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>
 </div>
-<div *ngIf="students != null">
+<div class="student-list" *ngIf="students != null">
   <div class="back-to-home">
     <button mat-button (click)="goToHome()"><i class="material-icons-outlined">arrow_back_ios</i> Back</button>
   </div>
@@ -19,9 +19,9 @@
         <th>username</th>
         <th>student name</th>
       </tr>
-      <tr *ngFor="let student of students | keyvalue">
-        <td>{{student.key}}</td>
-        <td>{{student.value}}</td>
+      <tr *ngFor="let student of students">
+        <td>{{student.username}}</td>
+        <td>{{student.name}}</td>
       </tr>
     </table>
   </div>

@@ -33,9 +33,10 @@
 .get-attendance-by-date {
   height: auto;
   padding: 20px;
+  margin-bottom: 20px;
   background-image: url("src/assets/images/attendance-bg.png");
   background-repeat: no-repeat;
-  background-size: covernst whe;
+  background-size: cover;
   background-position: center;
 }
 
@@ -45,4 +46,17 @@
 
 .send {
   padding: 8px;
+}
+
+
+.add {
+  border: 1px #fff solid;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add i {
+  font-size: xx-large;
 }

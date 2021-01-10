@@ -4,6 +4,7 @@ import {TeacherService} from '../../services/teacher.service';
 import {CourseService} from '../../services/course.service';
 import {FormControl, Validators} from '@angular/forms';
 import {Course} from '../../classes/Course';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-home',
@@ -51,5 +52,75 @@ export class AdminHomeComponent implements OnInit {
 
   pickAttendanceByDateAndCourse() {
 
+  }
+
+  addCourseToStudent() {
+    Swal.mixin({
+      input: 'text',
+      confirmButtonText: 'Next &rarr;',
+      showCancelButton: true,
+      progressSteps: ['1', '2']
+    }).queue([
+      {
+        title: 'Step 1',
+        text: 'enter course id'
+      },
+      {
+        title: 'Step 2',
+        text: 'enter student username'
+      }
+    ]).then((result) => {
+      if (result) {
+        this.studentService.addCourseToStudent(result['value'][0], result['value'][1])
+          .subscribe(res => {
+            Swal.fire(
+              'Done job!',
+              'Course added to student!',
+              'success'
+            );
+          }, error => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            });
+          });
+      }
+    });
+  }
+
+  addCourseToTeacher() {
+    Swal.mixin({
+      input: 'text',
+      confirmButtonText: 'Next &rarr;',
+      showCancelButton: true,
+      progressSteps: ['1', '2']
+    }).queue([
+      {
+        title: 'Step 1',
+        text: 'enter course id'
+      },
+      {
+        title: 'Step 2',
+        text: 'enter student username'
+      }
+    ]).then((result) => {
+      if (result) {
+        this.teacherService.addCourseToTeacher(result['value'][0], result['value'][1])
+          .subscribe(res => {
+            Swal.fire(
+              'Done job!',
+              'Course added to teacher!',
+              'success'
+            );
+          }, error => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            });
+          });
+      }
+    });
   }
 }

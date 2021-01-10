@@ -9,6 +9,7 @@ import {Course} from '../classes/Course';
 export class CourseService {
 
   private baseUrl = 'http://localhost:8080/api/v1/course';
+  private integration = 'http://localhost:8080/api/v1/integration';
 
   constructor(private http: HttpClient) {
   }

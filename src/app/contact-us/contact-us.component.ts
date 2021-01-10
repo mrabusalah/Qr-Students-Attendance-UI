@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-us',
@@ -15,7 +16,12 @@ export class ContactUsComponent implements OnInit {
   }
 
   onSubmit() {
-
+    Swal.fire(
+      'Thank you!',
+      'Your voice will be heard!',
+      'success'
+    );
+    this.back();
   }
 
   back() {
