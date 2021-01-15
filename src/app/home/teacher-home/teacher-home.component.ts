@@ -51,8 +51,8 @@ export class TeacherHomeComponent implements OnInit {
     this.router.navigate(['list/course-students', id]);
   }
 
-  listLectures() {
-
+  listLectures(id: number) {
+    this.router.navigate(['list/course-lectures', id]);
   }
 
   courseInfo(course: Course) {

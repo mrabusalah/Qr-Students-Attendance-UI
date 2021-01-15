@@ -1,0 +1,66 @@
+<!--<div class="text-center" *ngIf="lectures == null || lectures.length == 0">-->
+<!--  <div class="alert alert-secondary" role="alert">-->
+<!--    NO Lectures yet !-->
+<!--  </div>-->
+<!--  <img src="assets/images/main-logo.png" width="300px" alt="404 image">-->
+<!--  <h3 class="text-danger"></h3>-->
+<!--  <button mat-button (click)="goToHome()"><i class="material-icons-outlined">home</i> Home</button>-->
+<!--</div>-->
+<div class="lecture-list" *ngIf="lectures != null">
+  <div class="back-to-home">
+    <button mat-button (click)="goToHome()"><i class="material-icons-outlined">arrow_back_ios</i> Back</button>
+  </div>
+  <div class="lecture-bg">
+    <h1 class="d-flex align-items-center justify-content-center h-100">Lecture list</h1>
+  </div>
+  <div class="row">
+    <div class="col-12 date col-md-2">
+      <button (click)="showAttendanceTable()" mat-button><i class="material-icons-outlined">today</i> 1/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 2/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 3/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 4/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 5/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 6/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 7/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 8/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 9/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 10/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 11/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 12/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 13/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 14/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 15/1/2021</button>
+    </div>
+    <div class="col-12 date col-md-2">
+      <button mat-button><i class="material-icons-outlined">today</i> 16/1/2021</button>
+    </div>
+  </div>
+</div>

@@ -35,8 +35,10 @@ import {EditCourseComponent} from './component-admin/edit-course/edit-course.com
 import {ScanComponent} from './component-student/scan/scan.component';
 import {ZXingScannerModule} from '@zxing/ngx-scanner';
 import {TeacherHomeComponent} from './home/teacher-home/teacher-home.component';
-import { ListCourseStudentsComponent } from './component-teacher/list-course-students/list-course-students.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import {ListCourseStudentsComponent} from './component-teacher/list-course-students/list-course-students.component';
+import {ContactUsComponent} from './contact-us/contact-us.component';
+import {ListCourseLecturesComponent} from './component-teacher/list-course-lectures/list-course-lectures.component';
+import {ListLectureAttendanceComponent} from './component-teacher/list-lecture-attendance/list-lecture-attendance.component';
 
 @NgModule({
   exports: [MatSliderModule]
@@ -66,7 +68,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ScanComponent,
     TeacherHomeComponent,
     ListCourseStudentsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ListCourseLecturesComponent,
+    ListLectureAttendanceComponent
   ],
   imports: [
     BrowserModule,

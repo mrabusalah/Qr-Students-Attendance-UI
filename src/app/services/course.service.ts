@@ -37,4 +37,8 @@ export class CourseService {
   updateCourse(course: Course): Observable<any> {
     return this.http.put(`${this.baseUrl}`, course);
   }
+
+  getLecturesByCourseId(courseId: number): Observable<any> {
+    return this.http.get(`${this.integration}/lecture-course/lectures/${courseId}`);
+  }
 }

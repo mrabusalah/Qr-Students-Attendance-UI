@@ -1,0 +1,13 @@
+.lecture-bg {
+  height: 350px;
+  background-image: url("src/assets/images/lectures-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.date {
+  padding: 10px;
+}

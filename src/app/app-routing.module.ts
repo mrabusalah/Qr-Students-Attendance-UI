@@ -28,6 +28,8 @@ import {TeacherHomeComponent} from './home/teacher-home/teacher-home.component';
 import {TeacherAuthGuard} from './guards/teacher-auth.guard';
 import {ListCourseStudentsComponent} from './component-teacher/list-course-students/list-course-students.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
+import {ListCourseLecturesComponent} from './component-teacher/list-course-lectures/list-course-lectures.component';
+import {ListLectureAttendanceComponent} from './component-teacher/list-lecture-attendance/list-lecture-attendance.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -51,6 +53,8 @@ const routes: Routes = [
   {path: 'list/teacher', component: ListTeachersComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/course', component: ListCoursesComponent, canActivate: [AdminAuthGuard]},
   {path: 'list/course-students/:id', component: ListCourseStudentsComponent, canActivate: [TeacherAuthGuard]},
+  {path: 'list/course-lectures/:id', component: ListCourseLecturesComponent, canActivate: [TeacherAuthGuard]},
+  {path: 'list/lectures-attendance/:id', component: ListLectureAttendanceComponent, canActivate: [TeacherAuthGuard]},
   {path: 'edit/student/:username', component: EditStudentComponent, canActivate: [AdminAuthGuard]},
   {path: 'edit/teacher/:username', component: EditTeacherComponent, canActivate: [AdminAuthGuard]},
   {path: 'edit/course/:id', component: EditCourseComponent, canActivate: [AdminAuthGuard]},

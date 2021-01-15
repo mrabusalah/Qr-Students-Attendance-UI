@@ -1,0 +1,40 @@
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  overflow: hidden;
+  width: 50px;
+  text-overflow: ellipsis;
+}
+
+.table-header th {
+  text-align: center;
+}
+
+.yes-status, .no-status {
+  display: inline;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.yes-status {
+  border: 1px solid GREEN;
+  color: GREEN;
+}
+
+.no-status {
+  border: 1px solid RED;
+  color: RED;
+}
+
+.add {
+  margin-top: 20px;
+  padding: 20px;
+}

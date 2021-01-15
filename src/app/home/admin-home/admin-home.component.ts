@@ -102,7 +102,7 @@ export class AdminHomeComponent implements OnInit {
       },
       {
         title: 'Step 2',
-        text: 'enter student username'
+        text: 'enter teacher username'
       }
     ]).then((result) => {
       if (result) {
